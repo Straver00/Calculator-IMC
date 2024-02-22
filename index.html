@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="contenido/logoIMC.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>CALCULADORA DE IMC</h1>
+    <main>
+        <section>
+            <p>El índice de masa corporal (IMC) es una medida de asociación entre el peso y la altura de una persona. Se calcula dividiendo el peso de una persona en kilogramos por el cuadrado de su altura en metros.</p>
+            <p>El IMC es una medida útil para la población general, pero no es una medida precisa de la grasa corporal en individuos.</p>
+            <p>El IMC es un indicador de riesgo para la salud de una persona, pero no es un diagnóstico médico, se recomienda acudir a un nutricionista para mayor precisión.</p>        
+        </section>
+        <div class="container">
+            <div class="calculator">     
+                <h2>Ingrese sus datos</h2>
+                <label for="height">Altura (metros):</label>
+                <input type="number" min="0", id="height" step="0.01" onkeydown="if(event.keyCode === 13) calculateIMC()">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" min="0", id="weight" step="0.1" onkeydown="if(event.keyCode === 13) calculateIMC()">
+                <button onclick="calculateIMC()">Calcular IMC</button>
+                <div id="result"></div>
+            </div class="calculator">
+            <aside>
+                <img id="result_image">
+            </aside>
+        </div>
+        <div id="progress">
+        </div>
+        
+        <script src="script.js"></script>
+        <script>
+            showProgress();
+          </script>
+    </main>
+</body>
+</html>
